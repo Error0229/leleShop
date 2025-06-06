@@ -3,7 +3,10 @@ import { supabase } from '$lib/db';
 
 async function Login() {
         const { error } = await supabase.auth.signInWithOAuth({
-                provider: 'google'
+                provider: 'google',  
+                options: {
+                    redirectTo: `lele-shop.vercel.app/auth/callback`,
+                },
         });
         if (error) {
                 console.error(error);
