@@ -5,7 +5,7 @@ async function Login() {
         const { error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',  
                 options: {
-                    redirectTo: `lele-shop.vercel.app/auth/callback`,
+                    redirectTo: `https://lele-shop.vercel.app/auth/callback`,
                 },
         });
         if (error) {
