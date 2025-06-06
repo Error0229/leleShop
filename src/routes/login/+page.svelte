@@ -3,10 +3,7 @@ import { supabase } from '$lib/db';
 
 async function Login() {
         const { error } = await supabase.auth.signInWithOAuth({
-                provider: 'google',
-                options: {
-                        redirectTo: `${window.location.origin}/lele`
-                }
+                provider: 'google'
         });
         if (error) {
                 console.error(error);
